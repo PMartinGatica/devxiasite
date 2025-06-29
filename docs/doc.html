@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>DEVXIA | Diseño Web, Landing Pages y Desarrollo de APPs</title>
+    <meta name="description" content="Impulsa tu presencia digital con DEVXIA. Creamos landing pages, sitios web, flyers y aplicaciones móviles a medida. Elige entre plantillas o un desarrollo 100% personalizado.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0D1117; /* Azul oscuro casi negro */
+            color: #C9D1D9; /* Gris claro para texto */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .nav-scrolled {
+            background-color: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #21262d;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #22D3EE, #0EA5E9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(90deg, #0EA5E9, #22D3EE);
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .faq-item summary { cursor: pointer; outline: none; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        
+        /* Estilos para el Chatbot */
+        .chat-widget {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        #chat-bubble:hover svg {
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+          0%, 100% { transform: rotate(0deg); }
+          25% { transform: rotate(-15deg); }
+          75% { transform: rotate(15deg); }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0D1117',
+                        'brand-dark-blue': '#161B22',
+                        'brand-border': '#21262d',
+                        'brand-light': '#C9D1D9',
+                        'brand-cyan': '#22D3EE',
+                        'brand-blue': '#0EA5E9',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-brand-light">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 max-w-7xl flex justify-between items-center">
+            <a href="#inicio" class="flex items-center gap-2">
+                <i data-lucide="share-2" class="w-8 h-8 gradient-text"></i>
+                <span class="text-2xl font-semibold text-white">DEVXIA</span>
+            </a>
+            <ul class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <li><a href="#servicios" class="hover:text-white transition-colors">Servicios</a></li>
+                <li><a href="#planes" class="hover:text-white transition-colors">Planes</a></li>
+                <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" class="gradient-bg text-white font-bold py-2 px-4 rounded-md hover:opacity-90 transition-opacity">Contactar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN 1: HÉROE DE BIENVENIDA -->
+    <header id="inicio" class="relative pt-40 pb-20 text-center">
+        <div class="absolute inset-0 bg-grid-pattern opacity-10" style="background-image: url('data:image/svg+xml,%3csvg width=%2740%27 height=%2740%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cg fill=%27%2321262d%27 fill-opacity=%270.4%27 fill-rule=%27evenodd%27%3e%3cpath d=%27M0 40V0h40v40H0zm4 4h32V4H4v32z%27/%3e%3c/g%3e%3c/svg%3e');"></div>
+        <div class="container mx-auto px-6 max-w-4xl relative">
+            <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">Tu Próximo Nivel Digital <span class="gradient-text">Comienza Aquí.</span></h1>
+            <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-brand-light/80">
+                Creamos landing pages, sitios web y aplicaciones que convierten visitantes en clientes e impulsan tu negocio.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#planes" class="w-full sm:w-auto gradient-bg text-white font-bold py-3 px-8 rounded-lg text-lg hover:opacity-90 transition-opacity">
+                    Ver Planes
+                </a>
+                <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-brand-border text-white hover:bg-opacity-80 transition-colors font-medium py-3 px-8 rounded-lg text-lg">
+                    Solicitar Consulta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 2: SERVICIOS -->
+        <section id="servicios" class="py-20 sm:py-28">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Un Paquete de Soluciones para <span class="gradient-text">Cada Necesidad</span></h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-brand-light/70">Desde una idea inicial hasta un producto digital completo y escalable.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-brand-dark-blue border border-brand-border rounded-lg p-6 animate-on-scroll">
+                        <i data-lucide="layout-template" class="w-10 h-10 gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Landing Pages</h3>
+                        <p class="text-brand-light/70 text-sm">Captura leads y convierte visitantes con páginas optimizadas para la acción y la velocidad.</p>
+                    </div>
+                    <!-- Servicio 2 -->
+                    <div class="bg-brand-dark-blue border border-brand-border rounded-lg p-6 animate-on-scroll" style="transition-delay: 100ms;">
+                        <i data-lucide="gem" class="w-10 h-10 gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Diseño de Flyers</h3>
+                        <p class="text-brand-light/70 text-sm">Comunicación visual de alto impacto para tus campañas de marketing, tanto digital como impreso.</p>
+                    </div>
+                    <!-- Servicio 3 -->
+                    <div class="bg-brand-dark-blue border border-brand-border rounded-lg p-6 animate-on-scroll" style="transition-delay: 200ms;">
+                        <i data-lucide="globe" class="w-10 h-10 gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Páginas Web</h3>
+                        <p class="text-brand-light/70 text-sm">Sitios web corporativos y e-commerce autogestionables, robustos y con un diseño impecable.</p>
+                    </div>
+                    <!-- Servicio 4 -->
+                    <div class="bg-brand-dark-blue border border-brand-border rounded-lg p-6 animate-on-scroll" style="transition-delay: 300ms;">
+                        <i data-lucide="smartphone" class="w-10 h-10 gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Aplicaciones (APK)</h3>
+                        <p class="text-brand-light/70 text-sm">Lleva tu servicio al bolsillo de tus clientes con aplicaciones Android nativas, rápidas y fiables.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: PLANES DE PRECIOS -->
+        <section id="planes" class="py-20 sm:py-28 bg-brand-dark-blue">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Planes Flexibles para <span class="gradient-text">Impulsar tu Crecimiento</span></h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-brand-light/70">Elige la opción que mejor se adapta a tu etapa: una plantilla lista para usar o un desarrollo a medida.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Plan Base -->
+                    <div class="bg-brand-dark border border-brand-border rounded-xl p-8 flex flex-col animate-on-scroll">
+                        <h3 class="text-2xl font-bold text-white">Base</h3>
+                        <p class="text-brand-light/70 mt-2 mb-6">Ideal para validar ideas y empezar rápido.</p>
+                        <p class="text-4xl font-bold text-white mb-6">Desde $XXX</p>
+                        <ul class="space-y-4 text-brand-light/90 text-sm mb-8 flex-grow">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Basado en Plantilla</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>1 Landing Page o Flyer</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Diseño Responsivo</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Entrega en 7 días</span></li>
+                        </ul>
+                        <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-border text-white text-center font-semibold py-3 px-8 rounded-lg hover:bg-opacity-80 transition-colors">Elegir Plan</a>
+                    </div>
+                    <!-- Plan Pro (Destacado) -->
+                    <div class="bg-brand-dark border-2 border-brand-blue rounded-xl p-8 flex flex-col relative animate-on-scroll" style="transition-delay: 100ms;">
+                         <div class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 gradient-bg text-white text-xs font-bold rounded-full">MÁS POPULAR</div>
+                        <h3 class="text-2xl font-bold text-white">Pro</h3>
+                        <p class="text-brand-light/70 mt-2 mb-6">Para negocios que buscan crecer y destacarse.</p>
+                        <p class="text-4xl font-bold text-white mb-6">Desde $YYY</p>
+                         <ul class="space-y-4 text-brand-light/90 text-sm mb-8 flex-grow">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Diseño Personalizado</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Sitio Web de hasta 5 págs.</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Integración con CMS</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>SEO Básico</span></li>
+                             <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Soporte por 30 días</span></li>
+                        </ul>
+                        <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" class="w-full gradient-bg text-white text-center font-bold py-3 px-8 rounded-lg hover:opacity-90 transition-opacity">Elegir Plan</a>
+                    </div>
+                    <!-- Plan Premium -->
+                     <div class="bg-brand-dark border border-brand-border rounded-xl p-8 flex flex-col animate-on-scroll" style="transition-delay: 200ms;">
+                        <h3 class="text-2xl font-bold text-white">Premium</h3>
+                        <p class="text-brand-light/70 mt-2 mb-6">La solución completa para escalar sin límites.</p>
+                        <p class="text-4xl font-bold text-white mb-6">Desde $ZZZ</p>
+                         <ul class="space-y-4 text-brand-light/90 text-sm mb-8 flex-grow">
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Desarrollo 100% a Medida</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Sitio Web o App (APK)</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Funcionalidades Avanzadas</span></li>
+                            <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>SEO Avanzado</span></li>
+                             <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-cyan"></i><span>Soporte Prioritario</span></li>
+                        </ul>
+                        <a href="https://wa.me/5491112345678" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-border text-white text-center font-semibold py-3 px-8 rounded-lg hover:bg-opacity-80 transition-colors">Elegir Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- SECCIÓN 6: FAQ -->
+        <section id="faq" class="py-20 sm:py-28">
+            <div class="container mx-auto px-6 max-w-3xl">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Preguntas Frecuentes</h2>
+                </div>
+                <div class="space-y-4 animate-on-scroll">
+                    <!-- FAQ Item 1 -->
+                    <details class="faq-item bg-brand-dark-blue border border-brand-border rounded-lg p-5">
+                        <summary class="flex justify-between items-center font-semibold text-white">
+                            ¿Qué diferencia hay entre un plan con plantilla y uno personalizado?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </summary>
+                        <p class="mt-4 text-brand-light/70 text-sm">
+                            Un plan con plantilla utiliza un diseño pre-hecho que adaptamos a tu marca, lo que permite una entrega muy rápida. Un plan personalizado implica un proceso de diseño y desarrollo desde cero, creando una solución 100% única para tus necesidades específicas.
+                        </p>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                    <details class="faq-item bg-brand-dark-blue border border-brand-border rounded-lg p-5">
+                        <summary class="flex justify-between items-center font-semibold text-white">
+                            ¿Cuánto tiempo tardan en completar un proyecto?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </summary>
+                         <p class="mt-4 text-brand-light/70 text-sm">
+                           Los tiempos varían según el plan. El Plan Base se entrega en aproximadamente 7 días hábiles. El Plan Pro puede tomar de 3 a 5 semanas, y el Plan Premium depende de la complejidad de la aplicación o sitio web, lo cual se define en la etapa de consulta.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: CONTACTO CTA -->
+        <section id="contacto" class="py-20 sm:py-28 text-center bg-brand-dark-blue">
+            <div class="container mx-auto px-6 max-w-3xl animate-on-scroll">
+                 <h2 class="text-4xl md:text-5xl font-bold text-white">¿Listo para <span class="gradient-text">transformar tu idea</span> en realidad?</h2>
+                 <p class="mt-4 max-w-2xl mx-auto text-brand-light/70">
+                    Contáctanos hoy mismo para una consulta gratuita y sin compromiso. Analizaremos tus necesidades y te propondremos la mejor solución para alcanzar tus objetivos.
+                </p>
+                <div class="mt-8">
+                     <a href="mailto:hola@devxia.com" class="gradient-bg text-white font-bold py-4 px-10 rounded-lg text-lg hover:opacity-90 transition-opacity">
+                        Hablemos de tu Proyecto
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="pt-16 pb-8 border-t border-brand-border">
+        <div class="container mx-auto px-6 max-w-7xl text-center">
+             <a href="#inicio" class="flex items-center gap-2 justify-center">
+                <i data-lucide="share-2" class="w-8 h-8 gradient-text"></i>
+                <span class="text-2xl font-semibold text-white">DEVXIA</span>
+            </a>
+            <p class="text-sm my-4 text-brand-light/60">Soluciones Digitales que Impulsan tu Negocio.</p>
+            <div class="flex justify-center gap-6 my-6">
+                <a href="#" class="text-brand-light/70 hover:text-white"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                <a href="#" class="text-brand-light/70 hover:text-white"><i data-lucide="dribbble" class="w-5 h-5"></i></a>
+                <a href="#" class="text-brand-light/70 hover:text-white"><i data-lucide="github" class="w-5 h-5"></i></a>
+            </div>
+             <div class="mt-8 border-t border-brand-border pt-6 text-xs text-brand-light/50">
+                <p>© 2024 DEVXIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT -->
+    <div id="chat-widget-container" class="fixed bottom-6 right-6 z-50">
+        <!-- Botón flotante -->
+        <button id="chat-bubble" class="bg-[#25D366] hover:bg-[#1DAE52] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform">
+             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413 0 6.557-5.338 11.892-11.894 11.892-1.99 0-3.903-.52-5.586-1.459l-6.273 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.267.655 4.398 1.803 6.13l-1.327 4.869 4.869-1.327z"/></svg>
+        </button>
+
+        <!-- Ventana del chat -->
+        <div id="chat-window" class="chat-widget absolute bottom-20 right-0 w-80 bg-brand-dark-blue rounded-xl shadow-2xl border border-brand-border transform scale-95 opacity-0 pointer-events-none">
+            <!-- Header -->
+            <div class="p-4 bg-brand-dark rounded-t-xl flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <i data-lucide="share-2" class="w-8 h-8 gradient-text"></i>
+                    <div>
+                        <h4 class="font-bold text-white">DEVXIA</h4>
+                        <p class="text-xs text-brand-light/60">Asistente Virtual</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="text-brand-light/60 hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Cuerpo de mensajes -->
+            <div id="chat-body" class="p-4 h-96 overflow-y-auto flex flex-col gap-4">
+                <!-- Los mensajes se insertarán aquí -->
+            </div>
+            <!-- Footer con input y opciones -->
+            <div id="chat-footer" class="p-4 border-t border-brand-border">
+                <div id="chat-options" class="flex flex-wrap gap-2 mb-2">
+                    <!-- Las opciones se insertarán aquí -->
+                </div>
+                <form id="chat-form" class="flex gap-2">
+                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="flex-grow bg-brand-dark border border-brand-border rounded-lg p-2 text-sm focus:outline-none focus:ring-1 focus:ring-brand-blue">
+                    <button type="submit" class="gradient-bg p-2 rounded-lg text-white">
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // --- Lógica de la barra de navegación (simplificada) ---
+            const nav = document.getElementById('navbar');
+            if (nav) {
+                window.addEventListener('scroll', () => {
+                    nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+                });
+            }
+            
+            // --- Lógica para animaciones de scroll ---
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            if (animatedElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                animatedElements.forEach(el => observer.observe(el));
+            }
+            
+             // --- Lógica para Acordeón FAQ ---
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const summary = item.querySelector('summary');
+                const icon = summary.querySelector('i');
+                item.addEventListener('toggle', () => {
+                    if (item.open) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // --- Lógica del Chatbot ---
+            const chatBubble = document.getElementById('chat-bubble');
+            const chatWindow = document.getElementById('chat-window');
+            const closeChatBtn = document.getElementById('close-chat');
+            const chatBody = document.getElementById('chat-body');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const chatOptionsContainer = document.getElementById('chat-options');
+
+            // --- Simulación de Backend (JSON) ---
+            const chatFlow = {
+                "start": {
+                    "message": "¡Hola! 👋 Soy el asistente de DEVXIA. ¿Cómo puedo ayudarte hoy?",
+                    "options": [
+                        { "text": "Cotizar un proyecto", "next": "quote_start" },
+                        { "text": "Consulta general", "next": "general_query" },
+                    ]
+                },
+                "quote_start": {
+                    "message": "¡Genial! Me encantaría ayudarte con eso. ¿Qué tipo de proyecto tienes en mente?",
+                    "options": [
+                        { "text": "Landing Page", "next": "quote_landing" },
+                        { "text": "Página Web", "next": "quote_web" },
+                        { "text": "App Móvil (APK)", "next": "quote_apk" },
+                        { "text": "Flyer", "next": "quote_flyer" }
+                    ]
+                },
+                "quote_landing": { "message": "Perfecto. Las Landing Pages son nuestra especialidad para captar clientes. Un ejecutivo se pondrá en contacto contigo para afinar los detalles. ¿Te puedo ayudar en algo más?", "options": [{ "text": "Volver al inicio", "next": "start" }] },
+                "quote_web": { "message": "Excelente elección. Un sitio web completo es clave. Un ejecutivo te contactará para definir el alcance. ¿Necesitas algo más?", "options": [{ "text": "Volver al inicio", "next": "start" }] },
+                "quote_apk": { "message": "¡Una App! Eso es pensar en grande. Es un proceso más detallado, así que un especialista se comunicará contigo. ¿Alguna otra consulta?", "options": [{ "text": "Volver al inicio", "next": "start" }] },
+                "quote_flyer": { "message": "¡Claro! Un buen diseño de flyer marca la diferencia. Un diseñador te contactará pronto. ¿Te ayudo con otra cosa?", "options": [{ "text": "Volver al inicio", "next": "start" }] },
+                "general_query": {
+                    "message": "Por supuesto. Escribe tu consulta y uno de nuestros expertos te responderá a la brevedad.",
+                    "waitForInput": true // Indica que debe esperar texto libre
+                },
+                "fallback": {
+                    "message": "Entendido. He registrado tu mensaje. Un asesor se comunicará contigo pronto. ¿Hay algo más en lo que pueda ayudarte?",
+                    "options": [{ "text": "Volver al inicio", "next": "start" }]
+                }
+            };
+            
+            let currentStep = "start";
+
+            // Funciones del Chat
+            const toggleChatWindow = () => {
+                chatWindow.classList.toggle('opacity-0');
+                chatWindow.classList.toggle('scale-95');
+                chatWindow.classList.toggle('pointer-events-none');
+            };
+
+            const displayMessage = (text, sender) => {
+                const messageEl = document.createElement('div');
+                messageEl.classList.add('p-3', 'rounded-lg', 'max-w-[85%]', 'text-sm');
+                if (sender === 'bot') {
+                    messageEl.classList.add('bg-brand-border', 'self-start');
+                } else {
+                    messageEl.classList.add('gradient-bg', 'text-white', 'self-end');
+                }
+                messageEl.textContent = text;
+                chatBody.appendChild(messageEl);
+                chatBody.scrollTop = chatBody.scrollHeight; // Auto-scroll
+            };
+
+            const displayOptions = (options) => {
+                chatOptionsContainer.innerHTML = '';
+                if (!options) return;
+
+                options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option.text;
+                    button.classList.add('bg-brand-border', 'hover:bg-brand-blue', 'text-xs', 'font-semibold', 'py-1', 'px-3', 'rounded-full', 'transition-colors');
+                    button.dataset.next = option.next;
+                    button.addEventListener('click', handleOptionClick);
+                    chatOptionsContainer.appendChild(button);
+                });
+            };
+
+            const handleOptionClick = (e) => {
+                const userChoiceText = e.target.textContent;
+                displayMessage(userChoiceText, 'user');
+                
+                const nextStepKey = e.target.dataset.next;
+                currentStep = nextStepKey;
+                
+                setTimeout(() => {
+                    processStep(currentStep);
+                }, 500);
+            };
+
+            const processStep = (stepKey) => {
+                const step = chatFlow[stepKey];
+                if (!step) return;
+
+                displayMessage(step.message, 'bot');
+                displayOptions(step.options);
+
+                chatInput.disabled = !!step.waitForInput === false;
+                if(step.waitForInput) {
+                    chatInput.focus();
+                } else {
+                    chatInput.value = '';
+                }
+            };
+
+            // Eventos
+            chatBubble.addEventListener('click', toggleChatWindow);
+            closeChatBtn.addEventListener('click', toggleChatWindow);
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const userInput = chatInput.value.trim();
+                if (!userInput) return;
+
+                displayMessage(userInput, 'user');
+                chatInput.value = '';
+                
+                setTimeout(() => {
+                    currentStep = "fallback"; // Para cualquier entrada de texto, usamos el fallback
+                    processStep(currentStep);
+                }, 500);
+            });
+
+            // Iniciar el chat
+            setTimeout(() => {
+                processStep("start");
+            }, 500);
+        });
+    </script>
+</body>
+</html>
