@@ -45,7 +45,7 @@ const Hero = () => {
     <header
       ref={ref}
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-cyber"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-cyber pt-20"
     >
       {/* Partículas de fondo */}
       <div className="absolute inset-0 pointer-events-none">{particles}</div>
@@ -76,14 +76,14 @@ const Hero = () => {
         }`}
       >
         {/* Logo con efecto de brillo */}
-        <div className="mb-8 animate-glow">
+        {/* <div className="mb-8 animate-glow">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-rainbow animate-spin-slow">
             <span className="text-4xl">💻</span>
           </div>
-        </div>
+        </div> */}
 
-        {/* Título principal con efecto de máquina de escribir */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        {/* Título principal con efecto de máquina de escribir - CON MARGEN SUPERIOR */}
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight mt-16 md:mt-20">
           <span className="gradient-text">DEVXIA</span>
           <br />
           <span className="text-brand-light animate-pulse-slow">
@@ -142,7 +142,7 @@ const Hero = () => {
           </div>
           <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border">
             <div className="text-3xl font-bold gradient-text mb-2">100%</div>
-            <div className="text-brand-light/70">Satisfacción Client</div>
+            <div className="text-brand-light/70">Satisfacción Cliente</div>
           </div>
         </div>
 

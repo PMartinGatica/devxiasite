@@ -1,0 +1,69 @@
+<!-- filepath: c:\Users\pgatica\Desktop\Devxia\devxia-web\public\logoDevxia.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Fondo del logo -->
+  <rect width="200" height="200" fill="#0f172a" rx="16"/>
+  
+  <!-- Letra D principal con gradiente -->
+  <path d="M50 50 L50 150 L100 150 Q150 150 150 100 Q150 50 100 50 Z" 
+        fill="url(#mainGradient)" 
+        stroke="url(#strokeGradient)" 
+        stroke-width="2"/>
+  
+  <!-- Círculo de conexión principal -->
+  <circle cx="130" cy="100" r="6" fill="#00d4ff" opacity="0.9"/>
+  
+  <!-- Líneas de conexión tech (efecto de datos/conexiones) -->
+  <g opacity="0.8">
+    <!-- Línea superior -->
+    <path d="M70 80 Q90 70 110 75 Q120 78 130 85" 
+          stroke="#00d4ff" 
+          stroke-width="2" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <!-- Línea central -->
+    <path d="M70 100 Q95 90 115 95 Q125 98 130 100" 
+          stroke="#00d4ff" 
+          stroke-width="2.5" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <!-- Línea inferior -->
+    <path d="M70 120 Q90 130 110 125 Q120 122 130 115" 
+          stroke="#00d4ff" 
+          stroke-width="2" 
+          fill="none" 
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Puntos de conexión adicionales -->
+  <circle cx="95" cy="88" r="2" fill="#00d4ff" opacity="0.6"/>
+  <circle cx="115" cy="100" r="2" fill="#00d4ff" opacity="0.7"/>
+  <circle cx="95" cy="112" r="2" fill="#00d4ff" opacity="0.6"/>
+  
+  <!-- Efecto de brillo sutil -->
+  <ellipse cx="80" cy="70" rx="15" ry="8" fill="url(#glowGradient)" opacity="0.3"/>
+  
+  <!-- Definición de gradientes -->
+  <defs>
+    <!-- Gradiente principal para la letra D -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="30%" stop-color="#0099cc"/>
+      <stop offset="70%" stop-color="#006699"/>
+      <stop offset="100%" stop-color="#003366"/>
+    </linearGradient>
+    
+    <!-- Gradiente para el borde -->
+    <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+    
+    <!-- Gradiente para efecto de brillo -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

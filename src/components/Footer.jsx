@@ -12,9 +12,12 @@ const Footer = () => {
           {/* Logo y descripción */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-gradient-rainbow flex items-center justify-center">
-                <span className="text-xl">💻</span>
-              </div>
+              {/* LOGO REEMPLAZADO */}
+              <img 
+                src="/logoDevxia.svg" 
+                alt="DEVXIA Logo" 
+                className="w-10 h-10"
+              />
               <h3 className="text-2xl font-bold gradient-text">DEVXIA</h3>
             </div>
             <p className="text-brand-light/70 mb-6 max-w-md">
