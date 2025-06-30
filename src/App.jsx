@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import { CartProvider } from './context/CartContext'
 import Navbar from './components/Navbar'
@@ -11,15 +11,26 @@ import WhatsAppButton from './components/WhatsAppButton'
 import Cart from './components/Cart'
 
 function App() {
+  const [showHero, setShowHero] = useState(true)
+
   return (
     <CartProvider>
       <div className="min-h-screen bg-brand-dark text-brand-light">
         <Navbar />
-        <Hero />
-        <Services />
-        <FAQ />
-        <Contact />
-        <Footer />
+        
+        {/* Hero solo se muestra cuando showHero es true */}
+        {showHero && <Hero />}
+        
+        {/* Services ahora controla la visibilidad del Hero */}
+        <Services onServiceSelected={() => setShowHero(false)} onBackToServices={() => setShowHero(true)} />
+        
+        {showHero && (
+          <>
+            <FAQ />
+            <Contact />
+            <Footer />
+          </>
+        )}
         
         {/* Botón de WhatsApp */}
         <WhatsAppButton />
