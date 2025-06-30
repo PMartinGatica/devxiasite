@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ShoppingCart } from 'lucide-react'
+import { useCart } from '../context/CartContext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { getCartCount, setIsCartOpen } = useCart()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +20,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           
-          {/* LOGO ACTUALIZADO CON TU ARCHIVO SVG */}
+          {/* Logo */}
           <a href="#inicio" className="flex items-center gap-2">
             <img 
-              src="/logo2devxia.svg" 
+              src="/logoDevxia.svg" 
               alt="DEVXIA Logo" 
-              className="w-8 h-8 gradient-text"
+              className="w-8 h-8"
             />
             <span className="text-2xl font-semibold text-white">DEVXIA</span>
           </a>
@@ -33,15 +35,25 @@ const Navbar = () => {
             <a href="#servicios" className="text-brand-light hover:text-brand-cyan transition-colors">
               Servicios
             </a>
-            <a href="#planes" className="text-brand-light hover:text-brand-cyan transition-colors">
-              Planes
-            </a>
             <a href="#faq" className="text-brand-light hover:text-brand-cyan transition-colors">
               FAQ
             </a>
-            <a href="#contacto" className="bg-brand-cyan text-brand-dark px-6 py-2 rounded-full hover:bg-brand-cyan/90 transition-colors font-semibold">
-              Contactar
+            <a href="#contacto" className="text-brand-light hover:text-brand-cyan transition-colors">
+              Contacto
             </a>
+            
+            {/* Cart Button */}
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative p-2 text-brand-light hover:text-brand-cyan transition-colors"
+            >
+              <ShoppingCart className="w-6 h-6" />
+              {getCartCount() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-brand-cyan text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                  {getCartCount()}
+                </span>
+              )}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -60,15 +72,19 @@ const Navbar = () => {
               <a href="#servicios" className="text-brand-light hover:text-brand-cyan transition-colors">
                 Servicios
               </a>
-              <a href="#planes" className="text-brand-light hover:text-brand-cyan transition-colors">
-                Planes
-              </a>
               <a href="#faq" className="text-brand-light hover:text-brand-cyan transition-colors">
                 FAQ
               </a>
-              <a href="#contacto" className="bg-brand-cyan text-brand-dark px-6 py-2 rounded-full hover:bg-brand-cyan/90 transition-colors font-semibold text-center">
-                Contactar
+              <a href="#contacto" className="text-brand-light hover:text-brand-cyan transition-colors">
+                Contacto
               </a>
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="flex items-center gap-2 text-brand-light hover:text-brand-cyan transition-colors"
+              >
+                <ShoppingCart className="w-5 h-5" />
+                Carrito ({getCartCount()})
+              </button>
             </div>
           </div>
         )}
