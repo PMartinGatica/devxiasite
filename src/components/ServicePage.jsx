@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react'
-import { ArrowLeft, ShoppingCart, Star, Check, MessageCircle, Download, Wrench } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { ArrowLeft, ShoppingCart, Star, Check, MessageCircle, Download, Wrench, Play } from 'lucide-react'
 import { useCart } from '../context/CartContext'
 import Footer from './Footer'
+import VideoModal from './VideoModal'
 
 const ServicePage = ({ service, onBack }) => {
   const { addToCart } = useCart()
+  const [selectedDemo, setSelectedDemo] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     window.scrollTo({
@@ -13,14 +16,13 @@ const ServicePage = ({ service, onBack }) => {
     })
   }, [service])
 
-  // Datos expandidos para cada servicio con plantillas + planes personalizados
+  // Agregar demoVideo a los productos
   const serviceData = {
     'desarrollo-web': {
       title: 'Desarrollo Web',
       description: 'Sitios web profesionales: plantillas listas y desarrollo personalizado',
       type: 'both',
       products: [
-        // PLANTILLAS
         {
           id: 'web-template-1',
           name: 'Landing Page Business',
@@ -32,7 +34,8 @@ const ServicePage = ({ service, onBack }) => {
           deliveryTime: 'Descarga inmediata',
           rating: 4.8,
           downloads: 127,
-          isTemplate: true
+          isTemplate: true,
+          demoVideo: null // Aquí irá la URL del video cuando la subas
         },
         {
           id: 'web-template-2',
@@ -45,7 +48,8 @@ const ServicePage = ({ service, onBack }) => {
           deliveryTime: 'Descarga inmediata',
           rating: 4.9,
           downloads: 89,
-          isTemplate: true
+          isTemplate: true,
+          demoVideo: null // Aquí irá la URL del video cuando la subas
         },
         // PLANES PERSONALIZADOS
         {
@@ -91,7 +95,8 @@ const ServicePage = ({ service, onBack }) => {
           deliveryTime: 'Descarga inmediata',
           rating: 4.7,
           downloads: 45,
-          isTemplate: true
+          isTemplate: true,
+          demoVideo: null // Aquí irá la URL del video cuando la subas
         },
         // PLANES PERSONALIZADOS
         {
@@ -137,7 +142,8 @@ const ServicePage = ({ service, onBack }) => {
           deliveryTime: 'Descarga inmediata',
           rating: 4.7,
           downloads: 203,
-          isTemplate: true
+          isTemplate: true,
+          demoVideo: null // Aquí irá la URL del video cuando la subas
         },
         {
           id: 'design-pack-2',
@@ -150,7 +156,8 @@ const ServicePage = ({ service, onBack }) => {
           deliveryTime: 'Descarga inmediata',
           rating: 4.8,
           downloads: 156,
-          isTemplate: true
+          isTemplate: true,
+          demoVideo: null // Aquí irá la URL del video cuando la subas
         },
         // PLANES PERSONALIZADOS
         {
@@ -178,93 +185,6 @@ const ServicePage = ({ service, onBack }) => {
           isCustom: true
         }
       ]
-    },
-    'marketing-digital': {
-      title: 'Marketing Digital',
-      description: 'Estrategias de marketing: plantillas listas y campañas personalizadas',
-      type: 'both',
-      products: [
-        // PLANTILLAS
-        {
-          id: 'marketing-pack-1',
-          name: 'Pack Contenido Redes',
-          price: 45000,
-          category: 'Plantilla Marketing',
-          image: '/api/placeholder/400/300',
-          description: 'Pack de 50 posts editables para redes sociales',
-          features: ['50 diseños editables', 'Stories + Posts', 'Textos incluidos', 'Calendario de contenido', 'Guía de uso'],
-          deliveryTime: 'Descarga inmediata',
-          rating: 4.6,
-          downloads: 89,
-          isTemplate: true
-        },
-        // PLANES PERSONALIZADOS
-        {
-          id: 'marketing-custom-basic',
-          name: 'Plan Marketing Básico',
-          price: 250000,
-          category: 'Marketing Digital Personalizado',
-          image: '/api/placeholder/400/300',
-          description: 'Estrategia de marketing personalizada',
-          features: ['Análisis de mercado', 'Estrategia de contenido', 'Calendario editorial', '30 posts personalizados', 'Reportes mensuales'],
-          deliveryTime: '5-7 días hábiles',
-          rating: 5.0,
-          isCustom: true
-        }
-      ]
-    },
-    'ecommerce': {
-      title: 'E-commerce',
-      description: 'Tiendas online: plantillas listas y desarrollos personalizados',
-      type: 'both',
-      products: [
-        // PLANTILLAS
-        {
-          id: 'ecommerce-template-1',
-          name: 'Tienda Online Template',
-          price: 150000,
-          category: 'Plantilla E-commerce',
-          image: '/api/placeholder/400/300',
-          description: 'Plantilla completa de tienda online',
-          features: ['Catálogo de productos', 'Carrito de compras', 'Checkout básico', 'Panel de administración', 'Base de datos incluida'],
-          deliveryTime: 'Descarga inmediata',
-          rating: 4.8,
-          downloads: 67,
-          isTemplate: true
-        },
-        // PLANES PERSONALIZADOS
-        {
-          id: 'ecommerce-custom-basic',
-          name: 'Plan E-commerce Básico',
-          price: 750000,
-          category: 'E-commerce Personalizado',
-          image: '/api/placeholder/400/300',
-          description: 'Tienda online personalizada completa',
-          features: ['Diseño personalizado', 'Hasta 100 productos', 'Pasarela de pagos', 'Gestión de inventario', 'Soporte 90 días'],
-          deliveryTime: '20-30 días hábiles',
-          rating: 5.0,
-          isCustom: true
-        }
-      ]
-    },
-    'consultoria': {
-      title: 'Consultoría Digital',
-      description: 'Asesoramiento especializado y auditorías digitales',
-      type: 'service',
-      products: [
-        {
-          id: 'consultoria-1',
-          name: 'Auditoría Digital Completa',
-          price: 180000,
-          category: 'Consultoría',
-          image: '/api/placeholder/400/300',
-          description: 'Análisis completo de tu presencia digital',
-          features: ['Análisis web completo', 'Reporte SEO', 'Estrategia de mejora', 'Reunión de presentación', 'Seguimiento 30 días'],
-          deliveryTime: '5-7 días hábiles',
-          rating: 5.0,
-          isService: true
-        }
-      ]
     }
   }
 
@@ -283,6 +203,11 @@ const ServicePage = ({ service, onBack }) => {
         image: product.image || '/api/placeholder/300/200'
       })
     }
+  }
+
+  const handleDemo = (product) => {
+    setSelectedDemo(product)
+    setIsModalOpen(true)
   }
 
   const handleBackToServices = () => {
@@ -345,6 +270,18 @@ const ServicePage = ({ service, onBack }) => {
                   <div key={product.id} className="bg-brand-dark-blue/50 rounded-2xl overflow-hidden border border-brand-border hover:scale-105 transition-transform duration-300">
                     <div className="relative h-48 bg-gradient-to-br from-brand-cyan/20 to-brand-blue/20">
                       <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                      
+                      {/* Demo Button Overlay */}
+                      <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                        <button
+                          onClick={() => handleDemo(product)}
+                          className="bg-brand-cyan/90 hover:bg-brand-cyan text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 transform hover:scale-105 transition-all"
+                        >
+                          <Play className="w-4 h-4" />
+                          Demo
+                        </button>
+                      </div>
+
                       <div className="absolute top-4 right-4 bg-brand-dark/80 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
                         <Star className="w-4 h-4 text-yellow-400 fill-current" />
                         <span className="text-sm font-semibold">{product.rating}</span>
@@ -368,20 +305,30 @@ const ServicePage = ({ service, onBack }) => {
                           ))}
                         </ul>
                       </div>
-                      <div className="flex items-center justify-between mb-6">
-                        <span className="text-sm text-brand-light/60">📥 {product.deliveryTime}</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <div className="text-2xl font-bold text-brand-cyan">
-                          ${product.price.toLocaleString()}
-                        </div>
+                      
+                      {/* Buttons Row */}
+                      <div className="flex gap-3 mb-4">
+                        <button
+                          onClick={() => handleDemo(product)}
+                          className="flex-1 bg-gradient-to-r from-brand-purple/20 to-brand-pink/20 hover:from-brand-purple/40 hover:to-brand-pink/40 text-brand-purple hover:text-white border border-brand-purple/30 hover:border-transparent py-2 px-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                        >
+                          <Play className="w-4 h-4" />
+                          Demo
+                        </button>
                         <button
                           onClick={() => handleAddToCart(product)}
-                          className="bg-gradient-to-r from-brand-cyan to-brand-blue text-white px-6 py-2 rounded-xl font-semibold hover:scale-105 transition-transform flex items-center gap-2"
+                          className="flex-1 bg-gradient-to-r from-brand-cyan to-brand-blue text-white py-2 px-4 rounded-xl font-semibold hover:scale-105 transition-transform flex items-center justify-center gap-2"
                         >
                           <ShoppingCart className="w-4 h-4" />
                           Comprar
                         </button>
+                      </div>
+
+                      <div className="flex items-center justify-between">
+                        <div className="text-2xl font-bold text-brand-cyan">
+                          ${product.price.toLocaleString()}
+                        </div>
+                        <span className="text-sm text-brand-light/60">📥 {product.deliveryTime}</span>
                       </div>
                     </div>
                   </div>
@@ -390,7 +337,7 @@ const ServicePage = ({ service, onBack }) => {
             </div>
           )}
 
-          {/* Custom Plans Section */}
+          {/* Custom Plans Section - Sin cambios */}
           {customPlans.length > 0 && (
             <div className="mb-16">
               <div className="flex items-center gap-3 mb-8">
@@ -448,61 +395,6 @@ const ServicePage = ({ service, onBack }) => {
             </div>
           )}
 
-          {/* Services Section */}
-          {services.length > 0 && (
-            <div className="mb-16">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-8 rounded-full bg-brand-purple/20 flex items-center justify-center">
-                  <Users className="w-4 h-4 text-brand-purple" />
-                </div>
-                <h2 className="text-3xl font-bold text-white">Servicios Profesionales</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.map(product => (
-                  <div key={product.id} className="bg-brand-dark-blue/50 rounded-2xl overflow-hidden border border-brand-border hover:scale-105 transition-transform duration-300">
-                    <div className="relative h-48 bg-gradient-to-br from-brand-purple/20 to-brand-pink/20">
-                      <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
-                      <div className="absolute top-4 right-4 bg-brand-dark/80 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="text-sm font-semibold">{product.rating}</span>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-white mb-2">{product.name}</h3>
-                      <p className="text-brand-light/70 mb-4">{product.description}</p>
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-brand-light mb-3">Incluye:</h4>
-                        <ul className="space-y-1">
-                          {product.features.slice(0, 3).map((feature, index) => (
-                            <li key={index} className="flex items-center gap-2 text-sm text-brand-light/70">
-                              <Check className="w-4 h-4 text-brand-cyan" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="flex items-center justify-between mb-6">
-                        <span className="text-sm text-brand-light/60">⏱️ {product.deliveryTime}</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <div className="text-2xl font-bold text-brand-purple">
-                          ${product.price.toLocaleString()}
-                        </div>
-                        <button
-                          onClick={() => handleAddToCart(product)}
-                          className="bg-gradient-to-r from-brand-purple to-brand-pink text-white px-6 py-2 rounded-xl font-semibold hover:scale-105 transition-transform flex items-center gap-2"
-                        >
-                          <MessageCircle className="w-4 h-4" />
-                          Contratar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="bg-brand-dark-blue/50 rounded-2xl p-8 border border-brand-border max-w-2xl mx-auto">
@@ -527,6 +419,13 @@ const ServicePage = ({ service, onBack }) => {
           </div>
         </div>
       </div>
+      
+      {/* Video Modal */}
+      <VideoModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        product={selectedDemo} 
+      />
       
       <Footer />
     </>

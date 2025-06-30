@@ -30,30 +30,30 @@ const Services = ({ onServiceSelected, onBackToServices }) => {
       features: ['Flyers', 'Logos', 'Identidad Visual', 'Diseño a Medida'],
       type: 'both' // Plantillas + Personalizado
     },
-    {
-      id: 'marketing-digital',
-      icon: TrendingUp,
-      title: 'Marketing Digital',
-      description: 'Estrategias de marketing listas y campañas personalizadas.',
-      features: ['Packs de Contenido', 'Campañas', 'Estrategias', 'Consultoría'],
-      type: 'both' // Plantillas + Personalizado
-    },
-    {
-      id: 'ecommerce',
-      icon: ShoppingBag,
-      title: 'E-commerce',
-      description: 'Tiendas online listas y desarrollos personalizados.',
-      features: ['Plantillas Tienda', 'Catálogos', 'Pagos Online', 'Desarrollo Custom'],
-      type: 'both' // Plantillas + Personalizado
-    },
-    {
-      id: 'consultoria',
-      icon: Users,
-      title: 'Consultoría Digital',
-      description: 'Asesoramiento especializado y auditorías digitales.',
-      features: ['Auditorías', 'Reportes', 'Capacitaciones', 'Estrategias'],
-      type: 'service' // Solo servicios
-    }
+    // {
+    //   id: 'marketing-digital',
+    //   icon: TrendingUp,
+    //   title: 'Marketing Digital',
+    //   description: 'Estrategias de marketing listas y campañas personalizadas.',
+    //   features: ['Packs de Contenido', 'Campañas', 'Estrategias', 'Consultoría'],
+    //   type: 'both' // Plantillas + Personalizado
+    // },
+    // {
+    //   id: 'ecommerce',
+    //   icon: ShoppingBag,
+    //   title: 'E-commerce',
+    //   description: 'Tiendas online listas y desarrollos personalizados.',
+    //   features: ['Plantillas Tienda', 'Catálogos', 'Pagos Online', 'Desarrollo Custom'],
+    //   type: 'both' // Plantillas + Personalizado
+    // },
+    // {
+    //   id: 'consultoria',
+    //   icon: Users,
+    //   title: 'Consultoría Digital',
+    //   description: 'Asesoramiento especializado y auditorías digitales.',
+    //   features: ['Auditorías', 'Reportes', 'Capacitaciones', 'Estrategias'],
+    //   type: 'service' // Solo servicios
+    // }
   ]
 
   const handleServiceSelect = (serviceId) => {
