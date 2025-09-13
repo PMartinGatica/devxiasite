@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Menu, X, ShoppingCart } from 'lucide-react'
-import { useCart } from '../context/CartContext'
+import { Link } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
+// import { useCart } from '../context/CartContext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { getCartCount, setIsCartOpen } = useCart()
+  // const { getCartCount, setIsCartOpen } = useCart()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,14 +22,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img 
-              src="/logoDevxia.svg" 
+              src="/devxialogo_transparent.png" 
               alt="DEVXIA Logo" 
-              className="w-8 h-8"
+              className="w-20 h-30"
             />
             <span className="text-2xl font-semibold text-white">DEVXIA</span>
-          </a>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
@@ -42,8 +43,8 @@ const Navbar = () => {
               Contacto
             </a>
             
-            {/* Cart Button */}
-            <button
+            {/* Cart Button - Comentado temporalmente */}
+            {/* <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-2 text-brand-light hover:text-brand-cyan transition-colors"
             >
@@ -53,7 +54,7 @@ const Navbar = () => {
                   {getCartCount()}
                 </span>
               )}
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,13 +79,13 @@ const Navbar = () => {
               <a href="#contacto" className="text-brand-light hover:text-brand-cyan transition-colors">
                 Contacto
               </a>
-              <button
+              {/* <button
                 onClick={() => setIsCartOpen(true)}
                 className="flex items-center gap-2 text-brand-light hover:text-brand-cyan transition-colors"
               >
                 <ShoppingCart className="w-5 h-5" />
                 Carrito ({getCartCount()})
-              </button>
+              </button> */}
             </div>
           </div>
         )}

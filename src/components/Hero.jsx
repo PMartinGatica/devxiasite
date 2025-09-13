@@ -103,11 +103,9 @@ const Hero = () => {
 
         {/* Descripción */}
         <p className="text-lg md:text-xl text-brand-light/70 mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up">
-          Impulsa tu presencia digital con{' '}
-          <strong className="text-brand-cyan">DEVXIA</strong>. Creamos landing
-          pages, sitios web, flyers y aplicaciones móviles a medida. Elige entre
-          plantillas o un desarrollo{' '}
-          <strong className="gradient-text">100% personalizado</strong>.
+          Potenciá tu negocio digital con{' '}
+          <strong className="text-brand-cyan">DEVXIA</strong>. Creamos sitios web, tiendas online y aplicaciones móviles que {' '}
+          <strong className="gradient-text">impulsan tu negocio</strong>.
         </p>
 
         {/* Botones de acción con efectos */}
@@ -130,19 +128,22 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Estadísticas con efectos */}
+        {/* Valores diferenciales */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border">
-            <div className="text-3xl font-bold gradient-text mb-2">50+</div>
-            <div className="text-brand-light/70">Proyectos Completados</div>
+          <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border text-center">
+            <div className="text-2xl gradient-text mb-2">💻</div>
+            <div className="text-brand-light font-semibold mb-1">Desarrollo Personalizado</div>
+            <div className="text-brand-light/60 text-sm">Cada solución diseñada para tu crecimiento digital</div>
           </div>
-          <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border">
-            <div className="text-3xl font-bold gradient-text mb-2">24/7</div>
-            <div className="text-brand-light/70">Soporte Técnico</div>
+          <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border text-center">
+            <div className="text-2xl gradient-text mb-2">⚡</div>
+            <div className="text-brand-light font-semibold mb-1">Código de Calidad</div>
+            <div className="text-brand-light/60 text-sm">Soluciones seguras y escalables</div>
           </div>
-          <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border">
-            <div className="text-3xl font-bold gradient-text mb-2">100%</div>
-            <div className="text-brand-light/70">Satisfacción Cliente</div>
+          <div className="card-hover bg-brand-dark-blue/50 backdrop-blur-sm p-6 rounded-2xl border border-brand-border text-center">
+            <div className="text-2xl gradient-text mb-2">🤝</div>
+            <div className="text-brand-light font-semibold mb-1">Atención Directa</div>
+            <div className="text-brand-light/60 text-sm">Claridad total en el proceso</div>
           </div>
         </div>
 

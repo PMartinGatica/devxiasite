@@ -40,7 +40,7 @@ const Contact = () => {
                     <Phone className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="font-semibold text-brand-light text-lg mb-2">Teléfono</h4>
-                  <p className="text-brand-light/70">+54 9 11 1234-5678</p>
+                  <p className="text-brand-light/70">+54 9 2901 502672</p>
                 </div>
                 
                 <div className="flex flex-col items-center text-center p-6 bg-brand-dark/50 backdrop-blur-sm rounded-2xl border border-brand-border">
@@ -48,7 +48,7 @@ const Contact = () => {
                     <MapPin className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="font-semibold text-brand-light text-lg mb-2">Ubicación</h4>
-                  <p className="text-brand-light/70">Buenos Aires, Argentina</p>
+                  <p className="text-brand-light/70">Ushuaia, Argentina</p>
                 </div>
               </div>
             </div>

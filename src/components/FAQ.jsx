@@ -21,23 +21,23 @@ const FAQ = () => {
     },
     {
       question: "¿Incluyen hosting y dominio?",
-      answer: "Sí, todos nuestros planes incluyen hosting por el primer año y registro de dominio .com. También nos encargamos de la configuración inicial y el mantenimiento básico del servidor."
+      answer: "El hosting y el dominio son piezas estratégicas de cualquier proyecto digital. No los tratamos como un extra genérico, sino como una decisión a medida según la tecnología y el crecimiento que tu proyecto requiera. En proyectos simples podemos gestionar un plan económico de hosting y dominio, y en desarrollos más avanzados recomendamos la infraestructura adecuada para asegurar rendimiento y escalabilidad. Si lo deseas, también nos ocupamos de la gestión completa como un servicio adicional, transparente y personalizado."
     },
     {
       question: "¿Qué pasa después de entregar el proyecto?",
-      answer: "Ofrecemos 30 días de soporte gratuito post-entrega para cualquier ajuste o corrección. Después, puedes contratar nuestros planes de mantenimiento o manejar el proyecto por tu cuenta."
+      answer: "Con la entrega final comienza un período de garantía donde resolvemos cualquier detalle técnico relacionado con lo acordado. Este espacio te da la tranquilidad de que tu proyecto funcionará como debe. Luego, podés elegir entre manejarlo de forma independiente con toda la documentación que entregamos, o sumarte a nuestros planes de mantenimiento, diseñados para que siempre tengas un equipo listo para acompañarte y optimizar tu inversión."
     },
     {
       question: "¿Pueden trabajar con mi diseño existente?",
-      answer: "¡Por supuesto! Podemos trabajar con tus diseños, mejorar tu sitio actual o crear algo completamente nuevo desde cero. Nos adaptamos a tus necesidades y preferencias."
+      answer: "Sí, pero siempre damos un paso previo: una evaluación técnica del proyecto. Analizamos la calidad del código, posibles limitaciones y riesgos de seguridad. De ahí definimos la mejor estrategia: optimizar lo que ya existe o proponerte una reconstrucción parcial o total que sea más rentable a largo plazo. Así garantizamos que cada proyecto avance sobre bases sólidas y con resultados de calidad."
     },
     {
       question: "¿Ofrecen garantía en sus servicios?",
-      answer: "Sí, ofrecemos garantía de satisfacción del 100%. Si no estás completamente satisfecho con el resultado, trabajaremos hasta que lo estés o te devolvemos tu dinero."
+      answer: "Nuestra garantía está en el proceso, no en frases vacías. Trabajamos por fases: cada etapa se valida contigo antes de avanzar, asegurando que todo quede alineado con tu visión. Al finalizar, garantizamos que el producto funcione según lo definido en el alcance y en los diseños aprobados. Además, incluimos un período de corrección para resolver cualquier bug técnico. No prometemos devoluciones de dinero, pero sí el compromiso de acompañarte hasta que el resultado sea exactamente el que esperabas."
     },
     {
       question: "¿Cómo funciona el proceso de pago?",
-      answer: "Trabajamos con un sistema de pagos fraccionados: 50% al inicio del proyecto y 50% al finalizar. Aceptamos transferencias bancarias, PayPal y principales tarjetas de crédito."
+      answer: "Nuestro sistema de pago es claro y justo: un anticipo inicial para reservar el proyecto y comenzar con la estrategia, y el saldo final al momento de la entrega. Actualmente trabajamos con transferencias y métodos de pago digitales, para que el proceso sea seguro y transparente."
     }
   ];
 
