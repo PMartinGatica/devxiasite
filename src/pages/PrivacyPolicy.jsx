@@ -86,7 +86,7 @@ const PrivacyPolicy = () => {
               </p>
               <p className="text-brand-light/80 leading-relaxed">
                 Para el ejercicio de cualquiera de los derechos ARCO, usted deberá presentar la solicitud respectiva a través del correo electrónico 
-                <strong className="text-brand-cyan"> contacto@devxia.com</strong>. La respuesta a su solicitud será atendida en un plazo máximo de 10 días hábiles.
+                <strong className="text-brand-cyan"> contacto@devxiasite.com</strong>. La respuesta a su solicitud será atendida en un plazo máximo de 10 días hábiles.
               </p>
             </section>
 
@@ -109,7 +109,7 @@ const PrivacyPolicy = () => {
                 Para más información sobre este aviso de privacidad, puede contactarnos en:
               </p>
               <div className="space-y-2 text-brand-light/80">
-                <p><strong>Correo electrónico:</strong> <a href="mailto:contacto@devxia.com" className="text-brand-cyan hover:underline">contacto@devxia.com</a></p>
+                <p><strong>Correo electrónico:</strong> <a href="mailto:contacto@devxiasite.com" className="text-brand-cyan hover:underline">contacto@devxiasite.com</a></p>
                 <p><strong>Sitio web:</strong> <a href="https://devxia.com" className="text-brand-cyan hover:underline">devxia.com</a></p>
               </div>
             </section>

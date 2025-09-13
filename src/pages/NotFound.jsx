@@ -93,10 +93,10 @@ const NotFound = () => {
               Si creés que esto es un error o necesitás asistencia, no dudes en contactarnos.
             </p>
             <a
-              href="mailto:contacto@devxia.com"
+              href="mailto:contacto@devxiasite.com"
               className="inline-flex items-center gap-2 text-brand-cyan hover:text-brand-light transition-colors font-semibold"
             >
-              contacto@devxia.com
+              contacto@devxiasite.com
             </a>
           </motion.div>
         </motion.div>

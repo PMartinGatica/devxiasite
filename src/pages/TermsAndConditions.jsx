@@ -127,7 +127,7 @@ const TermsAndConditions = () => {
                 Para consultas sobre estos términos y condiciones:
               </p>
               <div className="space-y-2 text-brand-light/80">
-                <p><strong>Correo electrónico:</strong> <a href="mailto:contacto@devxia.com" className="text-brand-cyan hover:underline">contacto@devxia.com</a></p>
+                <p><strong>Correo electrónico:</strong> <a href="mailto:contacto@devxiasite.com" className="text-brand-cyan hover:underline">contacto@devxiasite.com</a></p>
                 <p><strong>Sitio web:</strong> <a href="https://devxia.com" className="text-brand-cyan hover:underline">devxia.com</a></p>
               </div>
             </section>

@@ -57,13 +57,13 @@ const Footer = () => {
               </h4>
               <div className="space-y-4">
                 <a 
-                  href="mailto:contacto@devxia.com"
+                  href="mailto:contacto@devxiasite.com"
                   className="flex items-center gap-3 text-brand-light/70 hover:text-brand-cyan transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center group-hover:bg-brand-cyan/20 transition-colors">
                     <Mail className="w-4 h-4 text-brand-cyan" />
                   </div>
-                  <span>contacto@devxia.com</span>
+                  <span>contacto@devxiasite.com</span>
                 </a>
                 
                 <a 
@@ -84,7 +84,7 @@ const Footer = () => {
                 </div>
                 
                 <a 
-                  href="https://instagram.com/devxia" 
+                  href="https://www.instagram.com/devxia.soluciones?igsh=c3hsYmcxNzNlNTEx" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center gap-3 text-brand-light/70 hover:text-brand-cyan transition-colors group"
@@ -92,7 +92,7 @@ const Footer = () => {
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-pink-500/10 to-purple-500/10 flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-pink-500/20 group-hover:to-purple-500/20 transition-all">
                     <Instagram className="w-4 h-4 text-pink-500" />
                   </div>
-                  <span>@devxia</span>
+                  <span>@devxia.soluciones</span>
                 </a>
               </div>
             </div>

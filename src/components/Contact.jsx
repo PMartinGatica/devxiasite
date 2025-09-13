@@ -32,7 +32,7 @@ const Contact = () => {
                     <Mail className="w-8 h-8 text-brand-cyan" />
                   </div>
                   <h4 className="font-semibold text-brand-light text-lg mb-2">Email</h4>
-                  <p className="text-brand-light/70">contacto@devxia.com</p>
+                  <p className="text-brand-light/70">contacto@devxiasite.com</p>
                 </div>
                 
                 <div className="flex flex-col items-center text-center p-6 bg-brand-dark/50 backdrop-blur-sm rounded-2xl border border-brand-border">
