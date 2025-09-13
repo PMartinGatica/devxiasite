@@ -1,10 +1,13 @@
 import React from 'react'
 
+// Mensaje compartido para WhatsApp
+const getWhatsAppMessage = () => "Hola DEVXIA! Me interesan sus servicios. ¿Podrían ayudarme? Me gustaría agendar una consulta gratuita para conocer más detalles."
+
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     // Número de WhatsApp (reemplaza con tu número real)
-    const phoneNumber = "5491123456789" // Formato: código país + número sin espacios ni guiones
-    const message = "¡Hola! Me interesa conocer más sobre los servicios de DEVXIA 🚀"
+    const phoneNumber = "5492901502672" // Formato: código país + número sin espacios ni guiones
+    const message = getWhatsAppMessage()
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     
     // Abrir WhatsApp en nueva pestaña
@@ -36,4 +39,5 @@ const WhatsAppButton = () => {
   )
 }
 
+export { getWhatsAppMessage }
 export default WhatsAppButton

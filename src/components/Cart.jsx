@@ -24,7 +24,7 @@ const Cart = () => {
     
     const message = `🛒 *Solicitud de Compra - DEVXIA*\n\n${itemsList}\n\n💰 *Total: $${total.toLocaleString()}*\n\n¡Hola! Me interesa adquirir estos productos/servicios. ¿Podemos coordinar el pago y entrega?`
     
-    const phoneNumber = "5491123456789"
+    const phoneNumber = "5492901502672"
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }

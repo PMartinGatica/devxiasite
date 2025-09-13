@@ -3,6 +3,23 @@ import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Heart, ExternalLink, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
+  const handlePhoneClick = () => {
+    const phoneNumber = "5492901502672"
+    const message = "Hola DEVXIA! Me interesan sus servicios. ¿Podrían ayudarme? Me gustaría agendar una consulta gratuita para conocer más detalles."
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
+
+  const handleEmailClick = () => {
+    const email = "contacto@devxiasite.com"
+    const subject = "Consulta sobre servicios DEVXIA"
+    const body = "Hola DEVXIA! Me interesan sus servicios. ¿Podrían ayudarme? Me gustaría agendar una consulta gratuita para conocer más detalles."
+    
+    // Opción Gmail Web
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.open(gmailUrl, '_blank')
+  }
+
   return (
     <footer className="bg-brand-dark-blue border-t border-brand-border py-12">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -56,25 +73,25 @@ const Footer = () => {
                 <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-cyan"></div>
               </h4>
               <div className="space-y-4">
-                <a 
-                  href="mailto:contacto@devxiasite.com"
+                <button 
+                  onClick={handleEmailClick}
                   className="flex items-center gap-3 text-brand-light/70 hover:text-brand-cyan transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center group-hover:bg-brand-cyan/20 transition-colors">
                     <Mail className="w-4 h-4 text-brand-cyan" />
                   </div>
                   <span>contacto@devxiasite.com</span>
-                </a>
+                </button>
                 
-                <a 
-                  href="tel:+5492901502672"
+                <button 
+                  onClick={handlePhoneClick}
                   className="flex items-center gap-3 text-brand-light/70 hover:text-brand-cyan transition-colors group"
                 >
                   <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center group-hover:bg-brand-cyan/20 transition-colors">
                     <Phone className="w-4 h-4 text-brand-cyan" />
                   </div>
                   <span>+54 9 2901 502672</span>
-                </a>
+                </button>
                 
                 <div className="flex items-center gap-3 text-brand-light/70">
                   <div className="w-8 h-8 rounded-lg bg-brand-cyan/10 flex items-center justify-center">

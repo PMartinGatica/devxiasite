@@ -194,7 +194,7 @@ const ServicePage = ({ service, onBack }) => {
     if (product.isCustom || product.isService) {
       const serviceType = product.isCustom ? 'desarrollo personalizado' : 'servicio'
       const message = `¡Hola! Me interesa el ${product.name} (${product.category}) por $${product.price.toLocaleString()}. ¿Podemos coordinar una reunión para discutir mi proyecto de ${serviceType}?`
-      const phoneNumber = "5491123456789"
+      const phoneNumber = "5492901502672"
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, '_blank')
     } else {
@@ -407,7 +407,7 @@ const ServicePage = ({ service, onBack }) => {
               <button
                 onClick={() => {
                   const message = `¡Hola! Me interesa un ${currentService.title.toLowerCase()} completamente personalizado. ¿Podemos conversar sobre mi proyecto?`
-                  const phoneNumber = "5491123456789"
+                  const phoneNumber = "5492901502672"
                   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
                   window.open(whatsappUrl, '_blank')
                 }}
